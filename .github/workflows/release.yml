@@ -3,7 +3,7 @@ on:
   workflow_dispatch:
   push:
     branches:
-      - 'main'
+      - '*'
 jobs:
   release:
     runs-on: windows-latest
@@ -12,18 +12,11 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v4.3.1
         with:
-          python-version: '3.x'
-      # - name: Append the directory of 'vcvarsall.bat' to PATH environment variable
-      #   uses: myci-actions/export-env-var-powershell@1
-      #   with:
-      #     name: PATH
-      #     value: $env:PATH;C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\VC\Auxiliary\Build
-      - shell: cmd
-        run: |
-          call "C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\VC\Auxiliary\Build\vcvars64.bat"
+          python-version: '3.8'
       - name: install hatch
         run: pip install hatch
       - run: pip install --upgrade setuptools
       - name: build
         run: hatch run build
       - run: ls dist
+      - run: ls dist/__main__
