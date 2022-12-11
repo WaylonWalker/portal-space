@@ -16,6 +16,8 @@ jobs:
       - name: install hatch
         run: pip install hatch
       - run: |
+          set DISTUTILS_USE_SDK=1
+          set MSSdk=1
           git clone https://github.com/pygame/pygame.git
           cd pygame
           python -m pip install setuptools requests -U
