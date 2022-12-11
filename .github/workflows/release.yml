@@ -16,6 +16,8 @@ jobs:
       - name: install hatch
         run: pip install hatch
       - run: |
+          git clone https://github.com/pygame/pygame.git
+          cd pygame
           python -m pip install setuptools requests -U
           python -m buildconfig -sdl2 --download
       - name: build
