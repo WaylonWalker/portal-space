@@ -8,9 +8,9 @@ jobs:
   release:
     runs-on: windows-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v2.5.0
       - name: Set up Python
-        uses: actions/setup-python@v3
+        uses: actions/setup-python@v4.3.1
         with:
           python-version: '3.x'
       - name: install hatch
