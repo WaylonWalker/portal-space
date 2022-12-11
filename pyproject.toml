@@ -53,7 +53,7 @@ dependencies = [
 [tool.hatch.envs.default.scripts]
 cov = "pytest --cov-report=term-missing --cov-config=pyproject.toml --cov=portal_space --cov=tests {args}"
 no-cov = "cov --no-cov {args}"
-build = "pyinstaller portal_space/cli/__main__.py"
+build = "pyinstaller portal_space/cli/__main__.py --clean --name portal-space"
 
 [[tool.hatch.envs.test.matrix]]
 python = ["37", "38", "39", "310", "311"]
