@@ -1,0 +1,20 @@
+name: Release
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - 'main'
+jobs:
+  release:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Set up Python
+        uses: actions/setup-python@v3
+        with:
+          python-version: '3.x'
+      - name: install hatch
+        run: pip install hatch
+      - name: build
+        run: hatch run build
+      - run: ls dist
