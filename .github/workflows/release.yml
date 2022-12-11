@@ -12,7 +12,7 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v4.3.1
         with:
-          python-version: '3.x'
+          python-version: '3.8'
       # - name: Append the directory of 'vcvarsall.bat' to PATH environment variable
       #   uses: myci-actions/export-env-var-powershell@1
       #   with:
