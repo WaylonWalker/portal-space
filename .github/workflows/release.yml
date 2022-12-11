@@ -21,7 +21,7 @@ jobs:
       # - shell: cmd
       #   run: |
       #     call "C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\VC\Auxiliary\Build\vcvars64.bat"
-      - install: pip install -e ".[dev]"
+      - run: pip install -e ".[dev]"
       - name: build
         run: pyinstaller portal_space/cli/__main__.py
       - run: ls dist
