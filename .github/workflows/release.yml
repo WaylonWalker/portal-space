@@ -15,6 +15,7 @@ jobs:
           python-version: '3.x'
       - name: install hatch
         run: pip install hatch
+      - run: pip install --upgrade setuptools
       - name: build
         run: hatch run build
       - run: ls dist
